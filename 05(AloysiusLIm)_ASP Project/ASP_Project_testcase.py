@@ -6,7 +6,7 @@ import grp5_ASP_project as asp
 
 class testMyProgram(unittest.TestCase):
     def test_sum(self):
-         self.assertEqual(asp.Asia5.sum_of_top3, 60923003)
+         self.assertEqual(asp.Asia5.sum_of_top3, 60923003) #this is an update
 
     def test_mean(self):
         self.assertEqual((round(asp.Asia5.mean_of_top3), 2), 20307668.98)
