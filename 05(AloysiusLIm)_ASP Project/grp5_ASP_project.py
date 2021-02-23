@@ -38,8 +38,8 @@ class Asia5:
 
         all_SUM_of_asia5.append(sum(sum_of_each_col))
         all_COUNTRY_of_asia5.append(asia5[col_id].name)
-        print("this is the sum of each column: " + str(sum(all_SUM_of_asia5)))
-        print("---------------")
+
+
     final_dataframe_of_asia5 = pd.DataFrame()
 
     #final_dataframe_of_asia5.head(3)
@@ -47,12 +47,8 @@ class Asia5:
     final_dataframe_of_asia5["country"] = all_COUNTRY_of_asia5
     final_dataframe_of_asia5["values"] = all_SUM_of_asia5
     final_dataframe_of_asia5.sort_values(by=['values'], inplace=True, ascending=False)
-    # Bar chart for the top 3 countries
-    final_dataframe_of_asia5.head(3).plot.bar(x="country", y="values", rot=70,
-                                              title="Top 3 COUNTRIES from period 2011 - 2020",
-                                              ylabel="Number of travelers [in millions]")
-    plt.savefig("top3Countries.png")
-    plt.show()
+    final_dataframe_of_asia5.reset_index(drop=True, inplace=True)
+    print(final_dataframe_of_asia5)
 
     sum_of_top3 = sum(final_dataframe_of_asia5['values'].head(3).to_list())
     mean_of_top3 = final_dataframe_of_asia5.head(3).mean()
@@ -60,6 +56,14 @@ class Asia5:
     print("")
     print("The mean value for the top 3 countries is " + str((round((mean_of_top3), 2))))
     print("The total no. of visitors for the top 3 countries is " + str(sum_of_top3))
+
+    # Bar chart for the top 3 countries
+    final_dataframe_of_asia5.head(3).plot.bar(x="country", y="values", rot=70,
+                                              title="Top 3 COUNTRIES from period 2011 - 2020",
+                                              ylabel="Number of travelers [in millions]")
+    plt.savefig("top3Countries.png")
+    plt.show()
+
 
 
 
