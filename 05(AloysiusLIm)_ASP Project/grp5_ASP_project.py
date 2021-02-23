@@ -40,7 +40,6 @@ class Asia5:
         all_COUNTRY_of_asia5.append(asia5[col_id].name)
         print("this is the sum of each column: " + str(sum(all_SUM_of_asia5)))
         print("---------------")
-
     final_dataframe_of_asia5 = pd.DataFrame()
 
     #final_dataframe_of_asia5.head(3)
@@ -51,8 +50,7 @@ class Asia5:
     # Bar chart for the top 3 countries
     final_dataframe_of_asia5.head(3).plot.bar(x="country", y="values", rot=70,
                                               title="Top 3 COUNTRIES from period 2011 - 2020",
-
-                                            ylabel="Number of travelers [in millions]")
+                                              ylabel="Number of travelers [in millions]")
     plt.savefig("top3Countries.png")
     plt.show()
 
