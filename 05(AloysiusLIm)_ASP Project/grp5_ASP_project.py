@@ -58,9 +58,7 @@ class Asia5:
     print("The total no. of visitors for the top 3 countries is " + str(sum_of_top3))
 
     # Bar chart for the top 3 countries
-    final_dataframe_of_asia5.head(3).plot.bar(x="country", y="values", rot=70,
-                                              title="Top 3 COUNTRIES from period 2011 - 2020",
-                                              ylabel="Number of travelers [in millions]")
+    final_dataframe_of_asia5.head(3).plot.bar(x="country", y="values", rot=70, title="Top 3 COUNTRIES from period 2011 - 2020", ylabel="Number of travelers [in millions]")
     plt.savefig("top3Countries.png")
     plt.show()
 
@@ -68,10 +66,7 @@ class Asia5:
 
 
     # Bar chart for all the countries
-    final_dataframe_of_asia5.plot.bar(x="country", y="values", rot=70,
-                                      title="ALL COUNTRIES from period 2011 - 2020",
-                                      figsize=(10, 10),
-                                      ylabel="Number of travelers [in millions]", )
+    final_dataframe_of_asia5.plot.bar(x="country", y="values", rot=70, title="ALL COUNTRIES from period 2011 - 2020", figsize=(10, 10), ylabel="Number of travelers [in millions]", )
     plt.savefig("allCountries.png")
     plt.show()
 
